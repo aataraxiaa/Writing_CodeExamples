@@ -11,44 +11,152 @@ import MapKit
 
 // Original Implementation
 
+//// Main view. Vertical stack of two map views
+//struct ContentView: View {
+//
+//    // Provides an annotation immedidately (synchronously)
+//    var synchronousAnnotationMaker = SynchronousAnnotationMaker()
+//
+//    var body: some View {
+//        MapView(annotation: synchronousAnnotationMaker.annotation).edgesIgnoringSafeArea(.all)
+//    }
+//}
+//
+//// Map view. Displays a map and a single map annotation.
+//struct MapView: UIViewRepresentable {
+//
+//    var annotation: MKAnnotation?
+//
+//    private let map = MKMapView()
+//
+//    func makeUIView(context: Context) -> MKMapView {
+//        return map
+//    }
+//
+//    func updateUIView(_ mapView: MKMapView, context: Context) {
+//        refreshAnnotation()
+//    }
+//
+//    private func refreshAnnotation() {
+//        map.removeAnnotations(map.annotations)
+//        if let annotation = annotation {
+//            map.addAnnotation(annotation)
+//        }
+//    }
+//}
+//
+//// Provides a map annotation immediately
+//class SynchronousAnnotationMaker {
+//    var annotation: MKAnnotation? = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.345589, longitude: -6.286951), addressDictionary: ["City":"Dublin", "Country":"Ireland"])
+//}
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Re-worked Implementation
+
 // Main view. Vertical stack of two map views
+//struct ContentView: View {
+//
+//    // Provides an annotation after some delay (asynchronously)
+//    @ObservedObject var asynchronousAnnotationMaker = AsynchronousAnnotationMaker()
+//
+//    var body: some View {
+//        MapView(annotation: asynchronousAnnotationMaker.annotation).edgesIgnoringSafeArea(.all)
+//            .onAppear {
+//                self.asynchronousAnnotationMaker.makeAnnotation()
+//        }
+//    }
+//}
+//
+//// Map view. Displays a map and a single map annotation.
+//struct MapView: UIViewRepresentable {
+//
+//    var annotation: MKAnnotation?
+//
+//    private let map = MKMapView()
+//
+//    func makeUIView(context: Context) -> MKMapView {
+//        return map
+//    }
+//
+//    func updateUIView(_ mapView: MKMapView, context: Context) {
+//        refreshAnnotation()
+//    }
+//
+//    private func refreshAnnotation() {
+//        map.removeAnnotations(map.annotations)
+//        if let annotation = annotation {
+//            map.addAnnotation(annotation)
+//        }
+//    }
+//}
+//
+//// Provides a map annotation afte some delay. A timer is used to simulate a delay which may occur due to a network request
+//class AsynchronousAnnotationMaker: ObservableObject {
+//
+//    @Published var annotation: MKAnnotation?
+//
+//    func makeAnnotation() {
+//        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+//            self.annotation = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.345589, longitude: -6.286951), addressDictionary: ["City":"Dublin", "Country":"Ireland"])
+//        }
+//    }
+//}
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Full, fixed Implementation
+
+// Main View.
 struct ContentView: View {
-    
-    // Provides an annotation immedidately (synchronously)
-    var synchronousAnnotationMaker = SynchronousAnnotationMaker()
-    
+
+    // Provides an annotation after some delay (asynchronously)
+    @ObservedObject var asynchronousAnnotationMaker = AsynchronousAnnotationMaker()
+
     var body: some View {
-        MapView(annotation: synchronousAnnotationMaker.annotation).edgesIgnoringSafeArea(.all)
+        MapView(annotation: asynchronousAnnotationMaker.annotation).edgesIgnoringSafeArea(.all)
+            .onAppear {
+                self.asynchronousAnnotationMaker.makeAnnotation()
+        }
     }
 }
 
 // Map view. Displays a map and a single map annotation.
 struct MapView: UIViewRepresentable {
-    
+
     var annotation: MKAnnotation?
-    
-    private let map = MKMapView()
-    
+
     func makeUIView(context: Context) -> MKMapView {
-        return map
+        return MKMapView()
     }
-    
+
     func updateUIView(_ mapView: MKMapView, context: Context) {
-        refreshAnnotation()
+        refreshAnnotation(onMap: mapView)
     }
-    
-    private func refreshAnnotation() {
-        map.removeAnnotations(map.annotations)
+
+    private func refreshAnnotation(onMap mapView: MKMapView) {
+        mapView.removeAnnotations(mapView.annotations)
         if let annotation = annotation {
-            map.addAnnotation(annotation)
+            mapView.addAnnotation(annotation)
         }
     }
 }
 
-// Provides a map annotation immediately
-class SynchronousAnnotationMaker {
-    var annotation: MKAnnotation? = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.345589, longitude: -6.286951), addressDictionary: ["City":"Dublin", "Country":"Ireland"])
+// Provides a map annotation afte some delay. A timer is used to simulate a delay which may occur due to a network request
+class AsynchronousAnnotationMaker: ObservableObject {
+
+    @Published var annotation: MKAnnotation?
+
+    func makeAnnotation() {
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+            self.annotation = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 53.345589, longitude: -6.286951), addressDictionary: ["City":"Dublin", "Country":"Ireland"])
+        }
+    }
 }
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+// Fuller Implementation
 
 //// Main view. Vertical stack of two map views
 //struct ContentView: View {
