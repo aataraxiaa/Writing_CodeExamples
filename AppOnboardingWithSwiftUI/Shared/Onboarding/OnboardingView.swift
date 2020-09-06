@@ -7,19 +7,17 @@
 
 import SwiftUI
 
-// This is our main Onboarding view
-
 struct OnboardingView: View {
     
     var body: some View {
         
-        // The view consists of a vertical stack of elements
+        // #1
         VStack {
             Spacer(minLength: 150)
             Image(systemName: "wand.and.stars")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 80, height: 80, alignment: .center)
             Text("Welcome To My App")
                 .font(Font.title2.bold().lowercaseSmallCaps())
                 .multilineTextAlignment(.center)
@@ -30,7 +28,7 @@ struct OnboardingView: View {
             Spacer(minLength: 30)
             Text("And finally 🥳...some...thing")
             
-            // We use a custom button view to allow the user to complete onboarding
+            // #2
             OnboardingButton()
         }
         .background(Color.gray)
@@ -39,16 +37,17 @@ struct OnboardingView: View {
     }
 }
 
-
-// This is our custom Onboarding button view, used to allow the user to complete onboarding
 struct OnboardingButton: View {
     
+    // #1
     @AppStorage("needsAppOnboarding") var needsAppOnboarding: Bool = true
     
     var body: some View {
         GeometryReader { proxy in
             LazyHStack {
                 Button(action: {
+                    
+                    // #2
                     needsAppOnboarding = false
                 }) {
                     Text("Finish Setup")

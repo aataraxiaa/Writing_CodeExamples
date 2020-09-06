@@ -14,4 +14,5 @@ struct AppOnboardingWithSwiftUIApp: App {
             ContentView()
         }
     }
+
 }

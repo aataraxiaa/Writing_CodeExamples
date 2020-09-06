@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("needsAppOnboarding") var needsAppOnboarding: Bool = true
+    @State private var appSetupState = "App NOT setup ☹️"
+    
+    // #1
+    @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
     
     var body: some View {
+        
+        // #2
         mainView.onAppear {
             
-            /*
-             Flow #1:
-             
-             When a user has already onboarded to the app, i.e not the first launch, we perform
-             any necessary app setup when our main view appears.
-             
-             We will know the user has already onboarded as the needsAppOnboarding flag will be false.
-            */
-            
             if !needsAppOnboarding {
-                // Set up app here!
+                // Scenario #3: User has completed app onboarding
+                appSetupState = "App setup 😀"
             }
         }
     }
@@ -33,31 +30,39 @@ struct ContentView: View {
 extension ContentView {
     
     private var mainView: some View {
-        Text("Hello, world!")
-        .padding()
-        .sheet(isPresented:$needsAppOnboarding) {
-            OnboardingView()
-        }
-        .onChange(of: needsAppOnboarding) { needsAppOnboarding in
-            
-            /*
-             Flow #2:
-             
-             When the user has just onboarded as part of this app launch, the needsAppOnboarding flag will change.
-             Using the .onChange view modifier, we can react to this change, and perform any necessary app setup.
-             
-             Again, we will know the user has already onboarded as the needsAppOnboarding flag will now be false.
-            */
-            
-            if !needsAppOnboarding {
-                // Set up app here!
+        VStack {
+            Spacer()
+            Button(action: {
+                needsAppOnboarding = true
+            }) {
+                Text("Reset Onboarding")
+                .padding(.horizontal, 40)
+                .padding(.vertical, 15)
+                .font(Font.title2.bold().lowercaseSmallCaps())
             }
+            .background(Color.black)
+            .foregroundColor(.white)
+            .cornerRadius(40)
+            
+            // #1
+            .sheet(isPresented:$needsAppOnboarding) {
+                
+                // Scenario #1: User has NOT completed app onboarding
+                OnboardingView()
+            }
+            
+            // #2
+            .onChange(of: needsAppOnboarding) { needsAppOnboarding in
+                
+                if !needsAppOnboarding {
+                    
+                    // Scenario #2: User has completed app onboarding during current app launch
+                    appSetupState = "App setup 😀"
+                }
+            }
+            Spacer()
+            Text(appSetupState)
+            Spacer()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
