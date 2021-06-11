@@ -20,11 +20,14 @@ struct ContentView: View {
         }, label: {
             Text("Show me a bug")
         })
-        .accessibility(label: Text("showBugButton"))
+        .accessibility(identifier: "showBugButton")
         .alert(isPresented: $isPresented, content: {
-            Alert(title: Text("Hi"))
+            Alert(title: Text("Show Bug!"),
+                  message: Text("This is a bug 🐛"),
+                  dismissButton: .cancel()
+            )
         })
-        .accessibility(label: Text("showBugAlert"))
+
     }
 }
 
