@@ -12,10 +12,12 @@ struct ShowBugPage {
     enum Identifiers {
         static let showBugButton = "showBugButton"
         static let showBugAlertMessage = "This is a bug 🐛"
+        static let showBugAlertOkButton = "Ok"
     }
 
     enum Buttons {
         static let showBugButton =  app.buttons[Identifiers.showBugButton]
+        static let okButton = app.buttons[Identifiers.showBugAlertOkButton]
     }
 
     enum Alerts {

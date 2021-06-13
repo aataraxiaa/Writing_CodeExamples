@@ -11,7 +11,7 @@ final class ShowBugTestCase: BaseTestCase {
 
     let  showBugRobot = ShowBugRobot()
 
-    func testshowBugButtonsDisplaysAlert() {
+    func testShowBugButtonsDisplaysAlert() {
         // When
         showBugRobot
             .tapShowBugButton()
@@ -19,5 +19,17 @@ final class ShowBugTestCase: BaseTestCase {
         // Then
         showBugRobot
             .assertShowBugAlertMessageDisplayed()
+    }
+
+    func testShowBugAlertOkButtonDismissesAlert() {
+        // When
+        showBugRobot
+            .tapShowBugButton()
+
+        // Then
+        showBugRobot
+            .assertShowBugAlertMessageDisplayed()
+            .tapShowBugAlertOkButton()
+            .assertShowBugAlertMessageNotDisplayed()
     }
 }

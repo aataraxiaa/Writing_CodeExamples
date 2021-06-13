@@ -24,7 +24,7 @@ struct ContentView: View {
         .alert(isPresented: $isPresented, content: {
             Alert(title: Text("Show Bug!"),
                   message: Text("This is a bug 🐛"),
-                  dismissButton: .cancel()
+                  dismissButton: .default(Text("Ok"))
             )
         })
 
