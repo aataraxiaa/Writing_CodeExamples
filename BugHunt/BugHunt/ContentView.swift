@@ -20,7 +20,6 @@ struct ContentView: View {
         }, label: {
             Text("Show me a bug")
         })
-        .accessibility(identifier: "showBugButton")
         .alert(isPresented: $isPresented, content: {
             Alert(title: Text("Show Bug!"),
                   message: Text("This is a bug 🐛"),

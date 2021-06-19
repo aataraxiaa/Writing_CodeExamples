@@ -10,7 +10,7 @@ import XCTest
 struct ShowBugPage {
 
     enum Identifiers {
-        static let showBugButton = "showBugButton"
+        static let showBugButton = "Show me a bug"
         static let showBugAlertMessage = "This is a bug 🐛"
         static let showBugAlertOkButton = "Ok"
     }

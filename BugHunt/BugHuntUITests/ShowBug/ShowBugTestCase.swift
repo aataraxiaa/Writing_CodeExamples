@@ -25,11 +25,10 @@ final class ShowBugTestCase: BaseTestCase {
         // When
         showBugRobot
             .tapShowBugButton()
+            .tapShowBugAlertOkButton()
 
         // Then
         showBugRobot
-            .assertShowBugAlertMessageDisplayed()
-            .tapShowBugAlertOkButton()
             .assertShowBugAlertMessageNotDisplayed()
     }
 }
