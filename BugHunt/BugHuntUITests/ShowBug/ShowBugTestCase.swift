@@ -5,8 +5,6 @@
 //  Created by Pete Smith on 11/06/2021.
 //
 
-import Foundation
-
 final class ShowBugTestCase: BaseTestCase {
 
     let  showBugRobot = ShowBugRobot()
@@ -23,9 +21,7 @@ final class ShowBugTestCase: BaseTestCase {
 
     func testShowBugAlertOkButtonDismissesAlert() {
         // When
-        showBugRobot
-            .tapShowBugButton()
-            .tapShowBugAlertOkButton()
+        showBugRobot.tapShowBugButton().tapShowBugAlertOkButton()
 
         // Then
         showBugRobot

@@ -15,11 +15,13 @@ struct ContentView: View {
         VStack {
             Text("Welcome to Bug Hunt!")
                 .padding()
+                .font(.title)
+                .foregroundColor(.white)
 
             Button(action: {
                 isPresented = true
             }, label: {
-                Text("Show me a bug")
+                Text("Show me a bug").foregroundColor(.white)
             })
                 .padding()
                 .background(Color.black)
@@ -27,7 +29,7 @@ struct ContentView: View {
                 .alert(isPresented: $isPresented, content: {
                     Alert(title: Text("Show Bug!"),
                           message: Text("This is a bug 🐛"),
-                          dismissButton: .default(Text("Ok"))
+                          dismissButton: .default(Text("Ok").foregroundColor(.red))
                     )
                 })
         }

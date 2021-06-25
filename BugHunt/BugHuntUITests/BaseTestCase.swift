@@ -15,6 +15,4 @@ class BaseTestCase: XCTestCase {
         continueAfterFailure = false
         app.launch()
     }
-
-    override func tearDownWithError() throws {}
 }

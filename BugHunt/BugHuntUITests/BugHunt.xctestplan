@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "59AD6D34-27EB-412F-BA23-BFAF0C2ABC7E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BugHunt.xcodeproj",
+      "identifier" : "46F7CD22266FB3A70008B9EC",
+      "name" : "BugHunt"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BugHunt.xcodeproj",
+        "identifier" : "46F7CD3E266FB3A80008B9EC",
+        "name" : "BugHuntUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

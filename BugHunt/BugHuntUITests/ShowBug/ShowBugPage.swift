@@ -23,5 +23,4 @@ struct ShowBugPage {
     enum Alerts {
         static let showBugAlertMessage =  app.staticTexts[Identifiers.showBugAlertMessage]
     }
-
 }
