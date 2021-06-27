@@ -3,38 +3,4 @@
    uuid = "86E779D3-E9D0-45F8-9A27-2A97D6163A37"
    type = "1"
    version = "2.0">
-   <Breakpoints>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "77B7B60E-8FEF-467E-8D33-65C60232CE20"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BugHuntUITests/ShowBug/ShowBugTestCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "testShowBugAlertOkButtonDismissesAlert()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87B3D883-49F3-4E15-9241-99DF965FBD93"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BugHuntUITests/ShowBug/ShowBugTestCase.swift"
-            startingColumnNumber = "41"
-            endingColumnNumber = "64"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "testShowBugAlertOkButtonDismissesAlert()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-   </Breakpoints>
 </Bucket>

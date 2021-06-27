@@ -67,7 +67,6 @@
 				46F7CD51266FB6C30008B9EC /* ShowBugRobot.swift */,
 				4697A40526739A4C005FD5DD /* ShowBugPage.swift */,
 				4697A4032673996A005FD5DD /* ShowBugTestCase.swift */,
-				46589F862686033700D46FEB /* BugHunt.xctestplan */,
 			);
 			path = ShowBug;
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 		46F7CD42266FB3A80008B9EC /* BugHuntUITests */ = {
 			isa = PBXGroup;
 			children = (
+				46589F862686033700D46FEB /* BugHunt.xctestplan */,
 				4697A40226739928005FD5DD /* ShowBug */,
 				46F7CD45266FB3A80008B9EC /* Info.plist */,
 				4697A3EC26739894005FD5DD /* BaseTestCase.swift */,

@@ -39,6 +39,11 @@ struct ContentView: View {
     }
 }
 
+enum Test {
+
+    static let testOne = 1
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

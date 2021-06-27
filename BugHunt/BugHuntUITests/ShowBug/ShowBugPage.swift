@@ -7,7 +7,7 @@
 
 import XCTest
 
-struct ShowBugPage {
+enum ShowBugPage {
 
     enum Identifiers {
         static let showBugButton = "Show me a bug"
