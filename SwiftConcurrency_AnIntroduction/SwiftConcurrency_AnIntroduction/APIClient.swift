@@ -18,7 +18,7 @@ enum APIErrors: Error {
 
 struct APIClient {
 
-    func fetchData(fromURL url: URL, withCompletion completion: @escaping (Result<ModelWrapper, Error>) -> Void) -> Void {
+    func fetchData(from url: URL, withCompletion completion: @escaping (Result<ModelWrapper, Error>) -> Void) -> Void {
 
         let firstTask = URLSession.shared.dataTask(with: url) { data, response, error in
 
@@ -66,7 +66,7 @@ struct APIClient {
         firstTask.resume()
     }
 
-    func fetchData(fromURL url: URL) async throws ->  ModelWrapper {
+    func fetchData(from url: URL) async throws ->  ModelWrapper {
 
         let (data, _) = try await  URLSession.shared.data(from: url)
         let model = try JSONDecoder().decode(Model.self, from: data)
@@ -75,5 +75,19 @@ struct APIClient {
             throw APIErrors.imageDecodingError
         }
         return ModelWrapper(model: model, image: image)
+    }
+
+//    func fetchDataPair(from urls: (URL, URL)) async throws -> (ModelWrapper, ModelWrapper) {
+//
+//        let resultOne = try await fetchData(from: urls.0)
+//        let resultTwo = try await fetchData(from: urls.1)
+//        return (resultOne, resultTwo)
+//    }
+
+    func fetchDataPair(from urls: (URL, URL)) async throws -> (ModelWrapper, ModelWrapper) {
+
+        async let resultOne = fetchData(from: urls.0)
+        async let resultTwo = fetchData(from: urls.1)
+        return try await (resultOne, resultTwo)
     }
 }

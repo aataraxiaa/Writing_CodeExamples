@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4608E63926A5BC2B0043285D /* DataRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4608E63826A5BC2B0043285D /* DataRacer.swift */; };
+		4608E63B26A5C1E00043285D /* GoodActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4608E63A26A5C1E00043285D /* GoodActor.swift */; };
 		46CA7D40269894F400FAD036 /* SwiftConcurrency_AnIntroductionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA7D3F269894F400FAD036 /* SwiftConcurrency_AnIntroductionApp.swift */; };
 		46CA7D42269894F400FAD036 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA7D41269894F400FAD036 /* ContentView.swift */; };
 		46CA7D44269894F500FAD036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CA7D43269894F500FAD036 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4608E63826A5BC2B0043285D /* DataRacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRacer.swift; sourceTree = "<group>"; };
+		4608E63A26A5C1E00043285D /* GoodActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodActor.swift; sourceTree = "<group>"; };
 		46CA7D3C269894F400FAD036 /* SwiftConcurrency_AnIntroduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency_AnIntroduction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CA7D3F269894F400FAD036 /* SwiftConcurrency_AnIntroductionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrency_AnIntroductionApp.swift; sourceTree = "<group>"; };
 		46CA7D41269894F400FAD036 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				46CA7D43269894F500FAD036 /* Assets.xcassets */,
 				46CA7D45269894F500FAD036 /* Preview Content */,
 				46CA7D672698951600FAD036 /* APIClient.swift */,
+				4608E63826A5BC2B0043285D /* DataRacer.swift */,
+				4608E63A26A5C1E00043285D /* GoodActor.swift */,
 				46CA7D692698956500FAD036 /* Model.swift */,
 			);
 			path = SwiftConcurrency_AnIntroduction;
@@ -260,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4608E63B26A5C1E00043285D /* GoodActor.swift in Sources */,
 				46CA7D42269894F400FAD036 /* ContentView.swift in Sources */,
+				4608E63926A5BC2B0043285D /* DataRacer.swift in Sources */,
 				46CA7D40269894F400FAD036 /* SwiftConcurrency_AnIntroductionApp.swift in Sources */,
 				46CA7D682698951600FAD036 /* APIClient.swift in Sources */,
 				46CA7D6A2698956500FAD036 /* Model.swift in Sources */,
@@ -484,7 +492,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +517,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
