@@ -10,12 +10,10 @@ import Foundation
 actor GoodActor {
     
     var count: Int = 0
-    var finished = false
     let limit = 5
 
     func displayAndUpdate() {
         guard count < 5 else {
-            print("Exiting...")
             return
         }
 

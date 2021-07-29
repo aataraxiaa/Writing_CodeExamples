@@ -10,13 +10,10 @@ import Foundation
 final class DataRacer {
 
     var count: Int = 0
-    var finished = false
     let limit = 5
 
     func displayAndUpdate() {
-        guard count < 5, !finished else {
-            print("Exiting...")
-            finished = true
+        guard count < 5 else {
             return
         }
 
