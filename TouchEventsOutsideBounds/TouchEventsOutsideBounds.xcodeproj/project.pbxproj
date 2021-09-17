@@ -13,6 +13,7 @@
 		46CE5CEB26F4E66F00686917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CE5CE926F4E66F00686917 /* Main.storyboard */; };
 		46CE5CED26F4E67100686917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CE5CEC26F4E67100686917 /* Assets.xcassets */; };
 		46CE5CF026F4E67100686917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CE5CEE26F4E67100686917 /* LaunchScreen.storyboard */; };
+		46CE5CF826F4EB2600686917 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CE5CF726F4EB2600686917 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		46CE5CEC26F4E67100686917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46CE5CEF26F4E67100686917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46CE5CF126F4E67100686917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46CE5CF726F4EB2600686917 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				46CE5CE326F4E66F00686917 /* AppDelegate.swift */,
 				46CE5CE526F4E66F00686917 /* SceneDelegate.swift */,
 				46CE5CE726F4E66F00686917 /* ViewController.swift */,
+				46CE5CF726F4EB2600686917 /* ContainerView.swift */,
 				46CE5CE926F4E66F00686917 /* Main.storyboard */,
 				46CE5CEC26F4E67100686917 /* Assets.xcassets */,
 				46CE5CEE26F4E67100686917 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46CE5CF826F4EB2600686917 /* ContainerView.swift in Sources */,
 				46CE5CE826F4E66F00686917 /* ViewController.swift in Sources */,
 				46CE5CE426F4E66F00686917 /* AppDelegate.swift in Sources */,
 				46CE5CE626F4E66F00686917 /* SceneDelegate.swift in Sources */,
