@@ -9,26 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var label: UILabel = {
+    private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        label.text = "No taps!"
         return label
     }()
 
-    private var containerView: ContainerView = {
-        let containerView = ContainerView()
+    private lazy var containerView: ContainerView = {
+        let containerView = ContainerView(withTapAction: self.didPressButton)
         containerView.backgroundColor = .systemYellow
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView
-    }()
-
-    private var button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemCyan
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
     }()
 
     private var count = 0
@@ -49,18 +44,12 @@ private extension  ViewController {
 
     func setupUI() {
 
-        button.addTarget(self, action: #selector(didPressButton), for: .touchUpInside)
+        view.backgroundColor = .black
 
         view.addSubview(label)
         label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
-
-        containerView.addSubview(button)
-        button.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        button.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
 
         view.addSubview(containerView)
         containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
